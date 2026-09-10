@@ -184,7 +184,7 @@
     z-index:2;
     max-width:500px;
     margin:0 auto;
-    padding-top:clamp(40px,9vh,76px);
+    padding-top:clamp(96px,16vh,132px);
   }
 
   /* ---------- hero ---------- */
@@ -559,7 +559,7 @@
 
   /* honey oozing from the top edge */
   .honeydrip{
-    position:fixed;top:0;left:0;right:0;height:104px;z-index:53;pointer-events:none;
+    position:absolute;top:0;left:50%;transform:translateX(-50%);width:100vw;height:110px;z-index:53;pointer-events:none;
     background:
       linear-gradient(180deg,rgba(224,149,42,.34),transparent 84%),
       repeating-linear-gradient(60deg,rgba(247,221,156,.08) 0 11px,transparent 11px 22px),
@@ -670,33 +670,34 @@
       <stop offset="1" stop-color="#b5791d"/>
     </linearGradient>
 
-    <path id="lf" class="leaf" d="M0 0C14-4 26 2 30 16 16 18 4 12 0 0Z"/>
+    <path id="lf" fill="#3f5a2b" d="M0 0C14-4 26 2 30 16 16 18 4 12 0 0Z"/>
     <g id="rz">
-      <circle class="pd" r="25"/>
-      <path class="pm" d="M0-23C10-13 10-3 0 5 -10-3 -10-13 0-23Z"/>
-      <path class="pm" d="M0-23C10-13 10-3 0 5 -10-3 -10-13 0-23Z" transform="rotate(72)"/>
-      <path class="pm" d="M0-23C10-13 10-3 0 5 -10-3 -10-13 0-23Z" transform="rotate(144)"/>
-      <path class="pm" d="M0-23C10-13 10-3 0 5 -10-3 -10-13 0-23Z" transform="rotate(216)"/>
-      <path class="pm" d="M0-23C10-13 10-3 0 5 -10-3 -10-13 0-23Z" transform="rotate(288)"/>
-      <circle class="pl" r="12"/>
-      <path class="pc" d="M0-11C5-6 5 0 0 4 -5 0 -5-6 0-11Z"/>
-      <path class="pc" d="M0-11C5-6 5 0 0 4 -5 0 -5-6 0-11Z" transform="rotate(120)"/>
-      <path class="pc" d="M0-11C5-6 5 0 0 4 -5 0 -5-6 0-11Z" transform="rotate(240)"/>
+      <circle r="25" fill="#521321"/>
+      <path fill="#7d1f2b" d="M0-23C10-13 10-3 0 5 -10-3 -10-13 0-23Z"/>
+      <path fill="#7d1f2b" d="M0-23C10-13 10-3 0 5 -10-3 -10-13 0-23Z" transform="rotate(72)"/>
+      <path fill="#7d1f2b" d="M0-23C10-13 10-3 0 5 -10-3 -10-13 0-23Z" transform="rotate(144)"/>
+      <path fill="#7d1f2b" d="M0-23C10-13 10-3 0 5 -10-3 -10-13 0-23Z" transform="rotate(216)"/>
+      <path fill="#7d1f2b" d="M0-23C10-13 10-3 0 5 -10-3 -10-13 0-23Z" transform="rotate(288)"/>
+      <circle r="12" fill="#a5293a"/>
+      <path fill="#c8455a" d="M0-11C5-6 5 0 0 4 -5 0 -5-6 0-11Z"/>
+      <path fill="#c8455a" d="M0-11C5-6 5 0 0 4 -5 0 -5-6 0-11Z" transform="rotate(120)"/>
+      <path fill="#c8455a" d="M0-11C5-6 5 0 0 4 -5 0 -5-6 0-11Z" transform="rotate(240)"/>
+      <circle r="4" fill="#e07a2a"/>
     </g>
     <g id="bloomArt">
-      <path class="skull-sh" d="M104 44c-31 0-53 23-53 53 0 20 8 34 19 43 1 1 2 20 4 25 3 7 10 11 30 11s27-4 30-11c2-5 3-24 4-25 11-9 19-23 19-43 0-30-22-53-53-53Z"/>
-      <path class="skull" d="M100 40c-31 0-53 23-53 53 0 20 8 34 19 43 1 1 2 20 4 25 3 7 10 11 30 11s27-4 30-11c2-5 3-24 4-25 11-9 19-23 19-43 0-30-22-53-53-53Z"/>
-      <ellipse class="socket" cx="82" cy="92" rx="12.5" ry="15"/>
-      <ellipse class="socket" cx="118" cy="92" rx="12.5" ry="15"/>
-      <path class="socket" d="M100 108c-5 8-8 14-8 18 0 3 4 5 8 5s8-2 8-5c0-4-3-10-8-18Z"/>
-      <path class="tooth" d="M84 150v13M92 150v15M100 150v15M108 150v15M116 150v13"/>
-      <use href="#lf" transform="translate(38,148) rotate(18) scale(1.15)"/>
-      <use href="#lf" transform="translate(158,152) rotate(150) scale(1.05)"/>
-      <use href="#lf" transform="translate(120,166) rotate(34) scale(.9)"/>
-      <use href="#rz" transform="translate(20,138) scale(.72)"/>
-      <use href="#rz" transform="translate(46,168) scale(1.15)"/>
-      <use href="#rz" transform="translate(152,170) scale(1)"/>
-      <use href="#rz" transform="translate(98,184) scale(1.32)"/>
+      <path fill="rgba(14,3,7,.5)" d="M104 46c-28 0-48 21-48 48 0 18 7 31 17 39 1 1 2 18 4 23 3 6 9 10 27 10s24-4 27-10c2-5 3-22 4-23 10-8 17-21 17-39 0-27-20-48-48-48Z"/>
+      <path fill="#e9dcc1" d="M100 42c-28 0-48 21-48 48 0 18 7 31 17 39 1 1 2 18 4 23 3 6 9 10 27 10s24-4 27-10c2-5 3-22 4-23 10-8 17-21 17-39 0-27-20-48-48-48Z"/>
+      <ellipse cx="83" cy="88" rx="11" ry="13.5" fill="#1c0a0e"/>
+      <ellipse cx="117" cy="88" rx="11" ry="13.5" fill="#1c0a0e"/>
+      <path fill="#1c0a0e" d="M100 102c-4 7-7 12-7 16 0 3 3 4 7 4s7-1 7-4c0-4-3-9-7-16Z"/>
+      <path stroke="#1c0a0e" stroke-width="3.5" stroke-linecap="round" d="M86 140v11M94 140v13M102 140v13M110 140v11"/>
+      <use href="#lf" transform="translate(40,140) rotate(18) scale(1.1)"/>
+      <use href="#lf" transform="translate(156,146) rotate(150) scale(1)"/>
+      <use href="#lf" transform="translate(118,160) rotate(34) scale(.85)"/>
+      <use href="#rz" transform="translate(24,132) scale(.7)"/>
+      <use href="#rz" transform="translate(48,162) scale(1.1)"/>
+      <use href="#rz" transform="translate(150,166) scale(.95)"/>
+      <use href="#rz" transform="translate(98,178) scale(1.25)"/>
     </g>
     <g id="roseRow">
       <use href="#lf" transform="translate(18,24) rotate(14) scale(.82)"/>
