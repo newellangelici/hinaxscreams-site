@@ -1516,25 +1516,37 @@
       <span class="rule"><svg class="rule-drips" viewBox="0 0 120 18" aria-hidden="true"><path d="M14 0 C14 6 15.5 10 16 10 C16.5 10 18 6 18 0 Z"/><path d="M40 0 C40 4.5 41 7 41.5 7 C42 7 43 4.5 43 0 Z"/><path d="M70 0 C70 8 71.5 13 72 13 C72.5 13 74 8 74 0 Z"/><path d="M96 0 C96 5 97 8 97.5 8 C98 8 99 5 99 0 Z"/></svg></span>
     </div>
 
-    <div class="grid cols-3">
+    <div class="grid cols-2">
       <a class="tile mini" href="https://www.amazon.com/hz/wishlist/ls/X38WB6LXHX6O?ref_=wl_share" target="_blank" rel="noopener">
         <span class="chip"><span class="hexbg"></span><span class="hexin"></span>
           <svg viewBox="0 0 24 24" fill="none"><path d="M5 14.5c4.2 2.8 9.8 2.8 14-.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16.4 16.2c.6-.3 2.2-.7 2.8-.4.5.3.3 1.9.1 2.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 9.8c0-1.6 1.3-2.6 3-2.6 1.5 0 2.8.7 2.8 2.6v2.3c0 .8.3 1.2.6 1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
         </span>
         <span class="label"><span class="title">Wishlist</span><span class="handle">Amazon</span></span>
       </a>
-      <div class="tile mini construction" role="img" aria-label="Venmo — coming soon">
+      <a class="tile mini" href="https://venmo.com/u/hinaxscreams" target="_blank" rel="noopener">
         <span class="chip"><span class="hexbg"></span><span class="hexin"></span>
           <svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6l5.5 12 5.5-12" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
-        <span class="label"><span class="title">Venmo</span><span class="cstatus">coming soon</span></span>
-      </div>
+        <span class="label"><span class="title">Venmo</span><span class="handle">@hinaxscreams</span></span>
+      </a>
       <a class="tile mini" href="https://cash.app/$jessiends" target="_blank" rel="noopener">
         <span class="chip"><span class="hexbg"></span><span class="hexin"></span>
           <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5.5" stroke="currentColor" stroke-width="1.7"/><path d="M12 6.5v11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M14.5 9.4c-.6-.7-1.6-1.1-2.7-1.1-1.4 0-2.4.7-2.4 1.8 0 2.6 5.2 1.3 5.2 4 0 1.2-1.1 1.9-2.6 1.9-1.2 0-2.3-.5-2.9-1.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
         <span class="label"><span class="title">Cash App</span><span class="handle">$jessiends</span></span>
       </a>
+      <a class="tile mini" href="https://paypal.me/hinaxscreams" target="_blank" rel="noopener">
+        <span class="chip"><span class="hexbg"></span><span class="hexin"></span>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7.5 4.5h5.6c2.5 0 4.1 1.8 3.7 4.3-.4 2.6-2.6 4.3-5.2 4.3H9.4L8.3 19.5H5.7L7.5 4.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 8.8h4.4c2.3 0 4-1.6 4.3-3.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </span>
+        <span class="label"><span class="title">PayPal</span><span class="handle">@hinaxscreams</span></span>
+      </a>
+      <button class="tile mini wide" type="button" id="zelleCopy" data-copy="hinaxscream@yahoo.com" style="cursor:pointer;font:inherit;color:inherit" aria-label="Zelle — copy hinaxscream@yahoo.com">
+        <span class="chip"><span class="hexbg"></span><span class="hexin"></span>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5v2.2M12 18.3v2.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M8 7h8l-8 10h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="label"><span class="title">Zelle</span><span class="handle" id="zelleText">hinaxscream@yahoo.com</span></span>
+      </button>
     </div>
   </section>
 
@@ -1733,6 +1745,28 @@
       document.documentElement.style.overflow='';
       document.body.style.overflow='';
       setTimeout(function(){ gate.remove(); },850);
+    });
+  })();
+</script>
+<script>
+  // Zelle tile: copy the address to the clipboard on tap
+  (function(){
+    var btn=document.getElementById('zelleCopy');
+    if(!btn) return;
+    var txt=document.getElementById('zelleText');
+    var addr=btn.getAttribute('data-copy')||'';
+    var original=txt?txt.textContent:'';
+    var t;
+    btn.addEventListener('click',function(){
+      var done=function(msg){
+        if(!txt) return;
+        txt.textContent=msg;
+        clearTimeout(t);
+        t=setTimeout(function(){ txt.textContent=original; },1800);
+      };
+      try{
+        navigator.clipboard.writeText(addr).then(function(){ done('Copied ✓'); },function(){ done(addr); });
+      }catch(e){ done(addr); }
     });
   })();
 </script>
